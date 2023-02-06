@@ -14,9 +14,9 @@ const Schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    likes: {
-      type: Number,
-      required: true,
+    image: {
+      type: String,
+      required: false,
     },
   },
   { timestamps: true }

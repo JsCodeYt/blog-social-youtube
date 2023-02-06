@@ -10,7 +10,7 @@ router.post("/register", async (req, res) => {
       status: 201,
       statusText: "created",
       user: {
-        ...newUser,
+        ...newUser._doc,
       },
     });
   } catch (error) {
@@ -28,7 +28,7 @@ router.post("/login", async (req, res) => {
         status: 200,
         statusText: "Successfully ✅",
         user: {
-          ...foundUser,
+          ...foundUser._doc,
         },
       });
     } else {
