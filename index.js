@@ -30,6 +30,7 @@ const connectMongoUrl =
 
 const connectMongo = async () => {
   try {
+    mongoose.set("strictQuery", false);
     await mongoose
       .connect(connectMongoUrl)
       .then(() => console.log("Connect to database ✅"));
@@ -51,6 +52,6 @@ app.use("/api/upload", upload.single("file"), (req, res) => {
   res.json("File uploaded...");
 });
 app.listen(port, () => {
-  connectMongo()
+  connectMongo();
   console.log(`Server is running on port ${port} ✅`);
 });
